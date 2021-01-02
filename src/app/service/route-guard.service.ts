@@ -11,7 +11,7 @@ export class RouteGuardService implements CanActivate {
   constructor(private hardCodedAuthServiceService: HardCodedAuthServiceService,
     private router: Router) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (this.hardCodedAuthServiceService.isUserLoggedIn()) {
       return true;
     } else {
